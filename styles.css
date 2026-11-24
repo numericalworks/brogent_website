@@ -96,40 +96,52 @@ h1 {
   color: var(--muted);
 }
 
-.download {
+.cta {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  padding: 13px 22px;
+  padding: 13px 24px;
+  border: 0;
   border-radius: 12px;
-  background: var(--accent);
-  color: var(--on-accent);
+  background: linear-gradient(135deg, #ffc44d 0%, #ff9a2e 45%, #ff6b1a 100%);
+  color: #2a1204;
+  font: inherit;
   font-size: 15.5px;
-  font-weight: 650;
+  font-weight: 750;
+  letter-spacing: -0.01em;
   text-decoration: none;
-  box-shadow: 0 6px 16px color-mix(in srgb, var(--accent) 35%, transparent);
+  box-shadow:
+    0 10px 24px rgba(255, 122, 24, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
   transition:
-    background 150ms ease,
     transform 150ms ease,
-    box-shadow 150ms ease;
+    box-shadow 150ms ease,
+    filter 150ms ease;
 }
 
-.download:hover {
-  background: var(--accent-hover);
+.cta:not(:disabled):hover {
   transform: translateY(-1px);
-  box-shadow: 0 10px 22px color-mix(in srgb, var(--accent) 40%, transparent);
+  filter: brightness(1.04);
+  box-shadow:
+    0 14px 30px rgba(255, 122, 24, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
-.download:active {
+.cta:not(:disabled):active {
   transform: translateY(0);
 }
 
-.download:focus-visible {
-  outline: 3px solid color-mix(in srgb, var(--accent) 45%, transparent);
+.cta:focus-visible {
+  outline: 3px solid color-mix(in srgb, #ff7a18 45%, transparent);
   outline-offset: 3px;
 }
 
-.download svg {
+.cta:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
+.cta svg {
   flex: none;
 }
 
@@ -203,11 +215,11 @@ h1 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .download {
+  .cta {
     transition: none;
   }
 
-  .download:hover {
+  .cta:not(:disabled):hover {
     transform: none;
   }
 }
