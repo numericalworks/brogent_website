@@ -140,6 +140,52 @@ h1 {
   color: var(--muted);
 }
 
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 34px;
+  padding-top: 18px;
+  border-top: 1px solid color-mix(in srgb, var(--muted) 28%, transparent);
+  font-size: 13px;
+}
+
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+  color: var(--text);
+}
+
+.footer-link:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.footer-link.donate:hover,
+.footer-link.donate:focus-visible {
+  color: var(--accent);
+}
+
+.footer-divider {
+  width: 1px;
+  height: 14px;
+  background: color-mix(in srgb, var(--muted) 35%, transparent);
+}
+
+.footer svg {
+  flex: none;
+}
+
 @media (max-width: 420px) {
   body {
     padding: 32px 18px;
